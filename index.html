@@ -127,6 +127,25 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 
+
+/* Official PRIDE Paradise artwork */
+.pride-paradise-logo{
+ display:block;
+ width:min(100%,620px);
+ height:auto;
+ max-height:330px;
+ object-fit:contain;
+ object-position:left center;
+ margin:8px 0 20px;
+ filter:drop-shadow(0 10px 28px rgba(0,0,0,.28));
+}
+@media(max-width:800px){
+ .pride-paradise-logo{margin:8px auto 20px;max-height:300px;object-position:center}
+}
+@media(max-width:560px){
+ .pride-paradise-logo{width:min(100%,500px);max-height:250px}
+}
+
 </style>
 </head>
 <body>
@@ -144,8 +163,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <div class="wrap hero-grid">
 <div class="hero-copy">
 <div class="eyebrow">One paradise. Endless possibilities.</div>
-<h1>PRIDE</h1>
-<span class="hero-script">Paradise</span>
+<img class="pride-paradise-logo" src="/assets/pride-paradise/pride-paradise-logo.png" alt="PRIDE Paradise" fetchpriority="high">
 <div class="showline">A new LGBTQ+ dating reality show</div>
 <div class="tagline">Where love is love and everyone belongs</div>
 <div class="casting-callout">
