@@ -239,19 +239,8 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
     "/assets/pride-paradise/iiiamdess-portrait.png",
     "/assets/pride-paradise/iiiamdess-portrait-2.png"
   ];
-  const assignmentKey = "reignsound-casting:host-portrait";
-  let selectedPortrait;
-
-  try {
-    selectedPortrait = localStorage.getItem(assignmentKey);
-    if (!portraits.includes(selectedPortrait)) {
-      selectedPortrait = portraits[Math.floor(Math.random() * portraits.length)];
-      localStorage.setItem(assignmentKey, selectedPortrait);
-    }
-  } catch (error) {
-    selectedPortrait = portraits[Math.floor(Math.random() * portraits.length)];
-  }
-
+  // Choose independently on every page load so refreshing can show either portrait.
+  const selectedPortrait = portraits[Math.floor(Math.random() * portraits.length)];
   const portrait = document.getElementById("host-portrait");
   if (portrait) portrait.src = selectedPortrait;
 })();
