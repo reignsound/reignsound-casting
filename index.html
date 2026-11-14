@@ -239,8 +239,12 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
     "/assets/pride-paradise/iiiamdess-portrait.png",
     "/assets/pride-paradise/iiiamdess-portrait-2.png"
   ];
-  // Choose independently on every page load so refreshing can show either portrait.
-  const selectedPortrait = portraits[Math.floor(Math.random() * portraits.length)];
+  // Choose randomly on first visit, then switch portraits on each refresh in this tab.
+  const storageKey = "reignsound-casting:host-portrait";
+  const previousPortrait = sessionStorage.getItem(storageKey);
+  const availablePortraits = portraits.filter((portrait) => portrait !== previousPortrait);
+  const selectedPortrait = availablePortraits[Math.floor(Math.random() * availablePortraits.length)];
+  sessionStorage.setItem(storageKey, selectedPortrait);
   const portrait = document.getElementById("host-portrait");
   if (portrait) portrait.src = selectedPortrait;
 })();
