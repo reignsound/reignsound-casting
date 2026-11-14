@@ -67,127 +67,80 @@ body{background:#080808}
 @media(max-width:800px){.wrap{width:min(var(--max),calc(100% - 32px))}.nav-links{display:none}.footgrid{grid-template-columns:1fr 1fr;gap:24px}.reignsound-footer-inner{width:calc(100% - 32px)}}
 @media(max-width:560px){.topbar{min-height:70px}.section{padding:54px 0}.footgrid{grid-template-columns:1fr;gap:18px}.footer-bottom{flex-direction:column}.reignsound-footer-bottom{flex-direction:column;align-items:center;gap:8px}}
 
+
+
+/* Compact Reignsound UI */
+:root{--bg:#080808;--panel:#111214;--line:rgba(255,255,255,.13);--muted:#b8b8bd;--max:1120px}
+body{background:#080808}.shell{background:radial-gradient(ellipse at 50% -12%,rgba(133,31,183,.17),transparent 42%),#080808}
+.wrap{width:min(var(--max),calc(100% - 48px))}
+.topbar{min-height:70px}.navcta,.btn{border-radius:6px;box-shadow:none}
+.hero{padding:38px 0 42px}.hero-grid{gap:22px}.host-card{min-height:350px}.host-card img{max-height:400px}
+.section{padding:34px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:17px}.section-head .lead{max-width:500px;font-size:13px}
+.h2{font-size:clamp(28px,4vw,42px);margin:5px 0 0}
+.requirements{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.req{min-height:64px;padding:11px 13px;border-radius:8px;background:linear-gradient(145deg,rgba(34,18,39,.6),rgba(15,15,17,.92))}.req b{font:600 10px "IBM Plex Mono",monospace;letter-spacing:.08em}.req p{font-size:11px;line-height:1.35}
+.auditions{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.citycard{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 18px;border-radius:8px;background:linear-gradient(145deg,rgba(35,10,42,.6),#101012)}.citycard h3{font-size:18px}.citycard p{font-size:11px}.citycard .private{text-align:right;font:500 9px "IBM Plex Mono",monospace;flex:none}
+.notice{margin-top:10px;padding:9px 12px;font-size:11px;border-radius:0 6px 6px 0}
+.apply-panel{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:19px 21px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(110deg,rgba(48,18,49,.62),rgba(16,16,18,.96))}
+.apply-panel h2{margin:4px 0;font-size:24px;letter-spacing:-.04em}.apply-panel p{margin:0;max-width:620px;color:var(--muted);font-size:12px}.apply-actions{display:flex;gap:8px;flex-wrap:wrap;flex:none}.btn.secondary{background:transparent;border-color:rgba(255,255,255,.25)}
+.provenance{padding:25px 0 22px;background:#111214;border-top:1px solid rgba(255,255,255,.1)}.provenance-head{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin-bottom:12px}.provenance-title{font:600 10px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase}.provenance-caption{font:400 9px "IBM Plex Mono",monospace;color:#85878d}.provenance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.1);border-left:1px solid rgba(255,255,255,.1)}.provenance-item{padding:9px 11px;border-right:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}.provenance-item small{display:block;margin-bottom:3px;font:500 8px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:#85878d}.provenance-item strong{font-size:11px;font-weight:500;color:#e5e5e8}
+.footer{padding:24px 0 18px;background:#85888e;color:#080808}.footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;text-align:center}.reignsound-wordmark{display:inline-flex;width:min(230px,65vw);min-height:32px;align-items:center;justify-content:center}.reignsound-wordmark img{width:100%;max-height:42px;object-fit:contain}.footer-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:14px 0 0}.footer-nav a{font:500 9px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#17181a;text-decoration:none}.footer-meta{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:18px;padding-top:12px;border-top:1px solid rgba(0,0,0,.2);font:400 9px "IBM Plex Mono",monospace;color:#222326}.footer-meta a{color:#111;text-decoration:none}
+@media(max-width:800px){.wrap{width:calc(100% - 32px)}.section-head{align-items:start;flex-direction:column;gap:7px}.requirements{grid-template-columns:repeat(2,minmax(0,1fr))}.provenance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{grid-template-columns:1fr .85fr;gap:12px}.host-card{min-height:300px}}
+@media(max-width:560px){.topbar{min-height:64px}.nav-links{display:none}.hero{padding:30px 0 34px}.hero-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero h1{font-size:clamp(66px,17vw,96px)}.hero-script{font-size:clamp(55px,14vw,75px);transform-origin:center}.casting-callout{margin:auto;text-align:left}.host-card{min-height:275px;max-width:360px;margin:auto}.host-card img{max-height:315px}.section{padding:27px 0}.h2{font-size:30px}.requirements{gap:7px}.req{padding:9px}.req b{font-size:9px}.req p{font-size:10px}.auditions{grid-template-columns:1fr;gap:8px}.citycard{padding:13px}.citycard h3{font-size:17px}.apply-panel{align-items:flex-start;flex-direction:column;padding:16px}.apply-panel h2{font-size:22px}.apply-actions{width:100%}.provenance-head{align-items:flex-start;flex-direction:column;gap:4px}.provenance-item{padding:8px}.footer-meta{align-items:center;flex-direction:column;gap:7px}}
 </style>
 </head>
 <body>
 <div class="shell">
 <header class="wrap topbar">
-<a class="brand-placeholder" href="#" aria-label="PRIDE Paradise home">PRIDE <span>Paradise</span></a>
+<a class="brand-placeholder" href="#top" aria-label="PRIDE Paradise home">PRIDE <span>Paradise</span></a>
 <div class="production-note">A RIGHTEOUS REALITY Entertainment Production</div>
 <nav class="nav-actions" aria-label="Main navigation">
-<div class="nav-links">
-<a href="#experience">The experience</a>
-<a href="#auditions">Auditions</a>
-<a href="#eligibility">Eligibility</a>
-</div>
+<div class="nav-links"><a href="#eligibility">Eligibility</a><a href="#auditions">Auditions</a></div>
 <a class="instagram" href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-<a class="navcta" href="#apply">Apply / intake</a>
+<a class="navcta" href="#apply">Casting details</a>
 </nav>
 </header>
-<main>
-<section class="hero">
-<div class="wrap hero-grid">
-<div class="hero-copy">
-<div class="eyebrow">One paradise. Endless possibilities.</div>
-<h1>PRIDE</h1>
-<span class="hero-script">Paradise</span>
-<div class="showline">A new LGBTQ+ dating reality show</div>
-<div class="tagline">Where love is love and everyone belongs</div>
-<div class="casting-callout">
-<div class="now">NOW CASTING</div>
-<div class="callout-sub">Bold, beautiful, and unapologetic singles</div>
-<div class="cities"><span class="ny">Live auditions: NYC</span> <span aria-hidden="true">&nbsp;|&nbsp;</span><span class="hou">Houston</span></div>
-</div>
-</div>
-<div class="host-card">
-<img src="/assets/pride-paradise/iiiamdess-portrait.png" alt="IIIAMDESS, host of PRIDE Paradise" fetchpriority="high">
-<div class="host-label"><small>HOSTED BY</small><strong>IIIAMDESS</strong></div>
-</div>
-</div>
-</section>
-<section class="section alt" id="experience">
-<div class="wrap">
-<div class="section-head"><div class="kicker">The experience</div><h2 class="h2">Love has room to surprise you.</h2><p class="lead">Real people. Real connections. Island vibes, flirts and feels, drama, iconic moments, and love without limits. PRIDE Paradise is looking for bold, beautiful, and unapologetic singles ready to show up as themselves.</p></div>
-<div class="grid">
-<article class="tile"><div class="symbol" aria-hidden="true">♡</div><h3>REAL CONNECTIONS</h3><p>Real people, meaningful chemistry, and the possibility of something special.</p></article>
-<article class="tile"><div class="symbol" aria-hidden="true">✧</div><h3>ISLAND VIBES</h3><p>Flirts, feels, and a tropical setting made for unforgettable experiences.</p></article>
-<article class="tile"><div class="symbol" aria-hidden="true">✦</div><h3>ICONIC MOMENTS</h3><p>Big personalities, unexpected turns, and moments worth remembering.</p></article>
-</div>
-</div>
-</section>
-<section class="section" id="auditions">
-<div class="wrap">
-<div class="kicker">Live auditions</div><h2 class="h2">New York City and Houston.</h2><p class="lead">PRIDE Paradise is holding live auditions in two cities. Private audition location details are provided after RSVP through the official casting team.</p>
-<div class="auditions">
-<article class="citycard"><h3 style="color:#ff72d2">♡ NEW YORK, NY</h3><p>Live audition opportunity in New York City.</p><div class="private">Private location · Provided after RSVP</div></article>
-<article class="citycard houston"><h3 style="color:#c5ff54">♡ HOUSTON, TX</h3><p>Live audition opportunity in Houston, Texas.</p><div class="private">Private location · Provided after RSVP</div></article>
-</div>
-<div class="notice">Audition locations are private and will be provided after RSVP. Do not travel to an audition location without receiving official confirmation.</div>
-</div>
-</section>
-<section class="section alt" id="eligibility">
-<div class="wrap">
-<div class="kicker">Are you...</div><h2 class="h2">The next face of paradise?</h2>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid">
+<div class="hero-copy"><div class="eyebrow">One paradise. Endless possibilities.</div><h1>PRIDE</h1><span class="hero-script">Paradise</span><div class="showline">A new LGBTQ+ dating reality show</div><div class="tagline">Where love is love and everyone belongs</div>
+<div class="casting-callout"><div class="now">NOW CASTING</div><div class="callout-sub">Bold, beautiful, and unapologetic singles</div><div class="cities"><span class="ny">Live auditions: NYC</span> <span aria-hidden="true">|</span> <span class="hou">Houston</span></div></div></div>
+<div class="host-card"><img src="/assets/pride-paradise/iiiamdess-portrait.png" alt="IIIAMDESS, host of PRIDE Paradise" fetchpriority="high"><div class="host-label"><small>HOSTED BY</small><strong>IIIAMDESS</strong></div></div>
+</div></section>
+<section class="section alt" id="eligibility"><div class="wrap">
+<div class="section-head"><div><div class="kicker">Who should apply</div><h2 class="h2">Is paradise calling?</h2></div><p class="lead">Singles ready to be themselves, make real connections, and embrace the experience.</p></div>
 <div class="requirements">
-<div class="req"><span class="emoji" aria-hidden="true">♡</span><div><b>21 OR OLDER</b><p>You must be at least 21 years of age.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">✧</span><div><b>LGBTQ+</b><p>You identify as LGBTQ+.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">♡</span><div><b>SINGLE AND READY</b><p>You are single and genuinely open to finding love.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">✦</span><div><b>CAMERA READY</b><p>You are confident, outgoing, and ready to be your authentic self on camera.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">✈</span><div><b>TRAVEL READY</b><p>You are available and willing to travel to a tropical location for filming.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">✧</span><div><b>GOOD ENERGY</b><p>You bring positivity, respect, and an open mind to new experiences.</p></div></div>
-</div>
-</div>
-</section>
-<section class="section" id="apply">
-<div class="wrap">
-<div class="kicker">Your moment starts here</div><h2 class="h2">There is more than one way to apply.</h2>
-<p class="lead">This Reignsound-facilitated page is one casting intake channel for PRIDE Paradise. It is not the only way to apply. Applicants may also participate in live auditions in New York City and Houston, or follow other official opportunities announced by RIGHTEOUS REALITY Entertainment and the show's casting team.</p>
-<div class="ways">
-<article class="way"><h3>ONLINE CASTING INTAKE</h3><p>Online application instructions will be published here when the official intake form is ready.</p></article>
-<article class="way"><h3>LIVE AUDITIONS</h3><p>Attend a live audition in New York City or Houston. Private location details are provided after RSVP.</p></article>
-</div>
-<div class="notice">For your safety, share personal information and media only through official casting channels. Submitting an application does not guarantee selection or participation.</div>
-<div class="social-row"><a href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">Follow PRIDE Paradise on Instagram ↗</a></div>
-</div>
-</section>
+<div class="req"><span class="emoji" aria-hidden="true">♡</span><div><b>21 OR OLDER</b><p>At least 21 years of age.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">✧</span><div><b>LGBTQ+</b><p>Identify as LGBTQ+.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">♡</span><div><b>SINGLE</b><p>Open to finding love.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">✦</span><div><b>CAMERA READY</b><p>Confident and authentic on camera.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">✈</span><div><b>TRAVEL READY</b><p>Available to travel for filming.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">✧</span><div><b>GOOD ENERGY</b><p>Positive, respectful, and open-minded.</p></div></div>
+</div></div></section>
+<section class="section" id="auditions"><div class="wrap">
+<div class="section-head"><div><div class="kicker">Live auditions</div><h2 class="h2">Find us in your city.</h2></div><p class="lead">Choose your city. RSVP with the official casting team to receive private location details.</p></div>
+<div class="auditions">
+<article class="citycard"><div><h3 style="color:#ff72d2">♡ NEW YORK CITY</h3><p>New York, NY</p></div><div class="private">Location shared<br>after RSVP</div></article>
+<article class="citycard houston"><div><h3 style="color:#c5ff54">♡ HOUSTON</h3><p>Houston, TX</p></div><div class="private">Location shared<br>after RSVP</div></article>
+</div><div class="notice">Audition locations are private. Attend only after receiving official confirmation.</div>
+</div></section>
+<section class="section alt" id="apply"><div class="wrap"><div class="apply-panel">
+<div><div class="kicker">Your next step</div><h2>Ready to step into paradise?</h2><p>Follow PRIDE Paradise for casting updates and official RSVP instructions. Online intake details will appear here when available.</p></div>
+<div class="apply-actions"><a class="btn" href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">Follow casting updates ↗</a><a class="btn secondary" href="#auditions">View auditions</a></div>
+</div></div></section>
 </main>
-<footer class="footer">
-<div class="wrap">
-<div class="footgrid">
-<div>
-<div class="footbrand">PRIDE Paradise</div>
-<p><strong>A RIGHTEOUS REALITY Entertainment Production.</strong></p>
-</div>
-<div>
-<strong>Production</strong>
-<p>RIGHTEOUS REALITY Entertainment</p>
-<p>Show host: IIIAMDESS</p>
-<p><a href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">PRIDE Paradise on Instagram ↗</a></p>
-</div>
-<div>
-<strong>Technology and casting intake</strong>
-<p>Reignsound™ facilitates the technology and intake for this casting experience.</p>
-<p>Reignsound™ is not the owner or producer of PRIDE Paradise.</p>
-</div>
-</div>
-<div class="footer-bottom">
-<span>PRIDE Paradise is a RIGHTEOUS REALITY Entertainment production.</span>
-<span>Technology and intake facilitated by Reignsound™.</span>
-</div>
-</div>
-<div class="reignsound-footer">
-<div class="reignsound-footer-inner">
-<a class="reignsound-wordmark" href="https://reignsound.com/" aria-label="Reignsound official website">
-<img src="https://reignsound.com/assets/reignsound-com-wordmark.svg" alt="Reignsound™">
-</a>
-<p>Reignsound Web™</p>
-<div class="reignsound-footer-bottom">
-<span>© Reignsound™: All rights reserved.</span>
-<a href="https://reignsound.com/">reignsound.com ↗</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
-</body>
+<section class="provenance" aria-labelledby="provenance-title"><div class="wrap">
+<div class="provenance-head"><div class="provenance-title" id="provenance-title">Application information &amp; provenance</div><div class="provenance-caption">REIGNSOUND.COM · APPLICATION RECORD</div></div>
+<div class="provenance-grid">
+<div class="provenance-item"><small>Application</small><strong>Reignsound Casting™</strong></div>
+<div class="provenance-item"><small>Platform</small><strong>Reignsound Web™</strong></div>
+<div class="provenance-item"><small>Production</small><strong>RIGHTEOUS REALITY Entertainment</strong></div>
+<div class="provenance-item"><small>Content authority</small><strong>RIGHTEOUS REALITY Entertainment</strong></div>
+<div class="provenance-item"><small>Technology &amp; intake</small><strong>Reignsound™</strong></div>
+<div class="provenance-item"><small>Source repository</small><strong>reignsound-casting</strong></div>
+</div></div></section>
+<footer class="footer"><div class="footer-inner">
+<a class="reignsound-wordmark" href="https://reignsound.com/" aria-label="Reignsound official website"><img src="https://reignsound.com/assets/reignsound-com-wordmark.svg" alt="Reignsound™"></a>
+<nav class="footer-nav" aria-label="Reignsound navigation"><a href="https://reignsound.com/">Reignsound.com</a><a href="https://reignsound.org/">Reignsound.org</a><a href="https://news.reignsound.com/">News from Reignsound™</a></nav>
+<div class="footer-meta"><span>Reignsound Web™</span><span>© Reignsound™: All rights reserved.</span><a href="https://reignsound.com/">Official website ↗</a></div>
+</div></footer>
+</div></body>
 </html>
