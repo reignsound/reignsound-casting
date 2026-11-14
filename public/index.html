@@ -78,6 +78,8 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 .social-row a{font:500 10px "IBM Plex Mono",monospace;color:#d8d2cb;border-color:rgba(255,255,255,.25)}
 .footer{padding:0;background:#101010;border-top:1px solid var(--rs-line);color:#c1cbd7;font-size:12px}
 .footer-inner{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr);gap:28px;align-items:center;padding:30px clamp(24px,5.4vw,80px)}
+.footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:15px;min-width:0}
+.footer-show-logo{display:block;width:min(100%,210px);height:auto;max-height:112px;object-fit:contain;object-position:left center}
 .footer-logo-link{display:inline-flex;align-items:center;justify-content:flex-start;max-width:230px}
 .footer-logo{display:block;width:100%;height:auto;max-height:38px;object-fit:contain;object-position:left center}
 .footer-brand-description{margin:12px 0 0;color:#e0e4e8;font-size:11px;line-height:1.5}
@@ -227,6 +229,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <footer class="footer">
 <div class="footer-inner">
 <div class="footer-brand">
+<img class="footer-show-logo" src="/assets/pride-paradise/pride-paradise-logo.png" alt="PRIDE Paradise">
 <a class="footer-logo-link" href="https://reignsound.com/" aria-label="Reignsound.com official website">
 <img class="footer-logo" src="https://reignsound.com/assets/reignsound-com-wordmark-20261030.svg" alt="REIGNSOUND.com">
 </a>
