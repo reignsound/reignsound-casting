@@ -152,6 +152,26 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
  .pride-paradise-logo{width:min(100%,500px);max-height:250px}
 }
 
+
+/* Associated brand identity modules */
+.social-row{justify-content:center;text-align:center;margin:26px 0 22px}
+.social-row a{display:inline-block;text-align:center;line-height:1.7}
+.brand-network{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px auto 8px;max-width:900px}
+.brand-module{min-width:0;border:1px solid var(--rs-line);border-radius:var(--rs-radius);background:linear-gradient(155deg,#141414,#090909);overflow:hidden;text-align:center}
+.brand-module summary{min-height:112px;padding:18px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;list-style:none}
+.brand-module summary::-webkit-details-marker{display:none}
+.brand-module summary:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.brand-wordmark{font-weight:700;letter-spacing:.045em;line-height:1.1;color:#f4f1ed}
+.brand-wordmark.righteous{font-size:clamp(12px,1.7vw,17px)}
+.brand-wordmark.unexpected{font-size:clamp(16px,2vw,22px);letter-spacing:.12em}
+.brand-wordmark.network{font-size:14px}
+.brand-mark{font:600 34px "IBM Plex Serif",serif;line-height:1;color:#f4f1ed}
+.brand-subtitle{font:500 9px "IBM Plex Mono",monospace;letter-spacing:.14em;color:#b8b3ad}
+.brand-module p{margin:0;padding:0 16px 17px;color:var(--rs-muted);font-size:11px;line-height:1.65}
+.brand-module[open]{border-color:rgba(255,255,255,.35)}
+@media(max-width:700px){.brand-network{grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px}.brand-module:last-child{grid-column:1/-1;max-width:calc(50% - 6px);width:100%;justify-self:center}}
+@media(max-width:420px){.brand-network{grid-template-columns:1fr}.brand-module:last-child{grid-column:auto;max-width:none}}
+
 </style>
 </head>
 <body>
@@ -160,7 +180,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <a class="brand-placeholder" href="https://reignsound.com/" aria-label="Reignsound.com home">Reignsound Casting™ <span>APPLICATION</span></a>
 <div class="production-note">Produced by RIGHTEOUS REALITY Entertainment™</div>
 <nav class="nav-actions" aria-label="Main navigation">
-<a class="instagram" href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+<a class="instagram" href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">Instagram® ↗</a>
 <a class="navcta" href="#casting">DETAILS</a>
 </nav>
 </header>
@@ -196,9 +216,9 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 </section>
 <section class="section">
 <div class="wrap">
-<div class="kicker">Live auditions</div><h2 class="h2">Confirmed in-person auditions.</h2><p class="lead">At this time, in-person live auditions are confirmed only in Houston, Texas, and New York City, New York. These are the only confirmed audition locations for PRIDE Paradise™. Additional cities may be considered; any expansion will be announced through official channels.</p>
+<div class="kicker">Live auditions</div><h2 class="h2">Confirmed in-person auditions.</h2><p class="lead">At this time, in-person live auditions are confirmed to be held in Houston, Texas, and New York City, New York. Additional cities may be considered and any expansion will be announced through official channels.</p>
 <div class="auditions">
-<article class="citycard"><h3 style="color:#ff72d2">♡ NEW YORK, NY</h3><p>Live audition opportunity in New York City.</p><div class="private">Confirmed live audition · In person</div></article>
+<article class="citycard"><h3 style="color:#ff72d2">♡ NEW YORK, NY</h3><p>Live audition opportunity in New York City.</p><div class="private">PRIVATE LOCATION · PROVIDED AFTER RSVP</div></article>
 <article class="citycard houston"><h3 style="color:#c5ff54">♡ HOUSTON, TX</h3><p>Live audition opportunity in Houston, Texas.</p><div class="private">Private location · Provided after RSVP</div></article>
 </div>
 <div class="notice">Audition location, scheduling, and participation details must be confirmed directly by the official casting team. Do not travel to an audition location without receiving official instructions. To express interest in a potential additional city, contact the official PRIDE Paradise™ Instagram account.</div>
@@ -220,13 +240,18 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <section class="section" id="apply">
 <div class="wrap">
 <div class="kicker">Casting information</div><h2 class="h2">Official audition opportunities.</h2>
-<p class="lead">The only auditions currently confirmed for PRIDE Paradise™ are in-person live auditions in Houston and New York City. There are no online auditions available at this time. Individuals interested in online auditions or potential additional cities may contact the official show account to register their interest. Expressions of interest will be retained and may be followed up if an opportunity becomes available; they do not constitute an application, audition booking, or confirmation of participation.</p>
+<p class="lead">Auditions for PRIDE Paradise™ are currently confirmed as in-person live auditions in Houston, Texas, and New York, New York. Individuals who are interested in online auditions or potential additional cities, may contact the <a href="https://instagram.com/prideparadise_" target="_blank" rel="noopener noreferrer">PRIDE Paradise™ Casting Team</a> directly to express their interest.</p>
 <div class="ways">
-<a class="way" href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none"><h3>ONLINE CASTING INTAKE · NOT YET LIVE</h3><p>Reignsound Online Casting Intake is not yet available for this opportunity. To apply online if an official option becomes available, learn more about the confirmed live auditions, or register your interest in online auditions, visit the official PRIDE Paradise™ Instagram account: @prideparadise_.</p><span class="private">Official show information · Instagram ↗</span></a>
-<article class="way"><h3>CONFIRMED LIVE AUDITIONS</h3><p>In-person auditions are currently confirmed in Houston, Texas, and New York City, New York. For official information, scheduling, and audition instructions, visit @prideparadise_.</p></article>
+<article class="way"><h3>ONLINE CASTING INTAKE</h3><p>Reignsound Online Casting Service Intake™ (ROCSI™) system is not yet available. Learn more about <a href="https://reignsound.org/" target="_blank" rel="noopener noreferrer">Reignsound Opportunities™</a>.</p><a class="private" href="https://reignsound.org/" target="_blank" rel="noopener noreferrer">OPPORTUNITIES DIRECTORY · NOT YET LIVE ↗</a></article>
+<article class="way"><h3>CONFIRMED LIVE AUDITIONS</h3><p>In-person auditions are currently confirmed to be held in Houston, Texas, and New York City, New York. For additional information including scheduling and audition instructions, visit <a href="https://instagram.com/prideparadise_" target="_blank" rel="noopener noreferrer">PRIDE Paradise™ (@prideparadise_) on Instagram®</a>.</p></article>
 </div>
 <div class="notice">For your safety, share personal information and media only through official casting channels. Registering interest does not constitute an application, audition booking, or guarantee of selection or participation.</div>
-<div class="social-row"><a href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">Follow PRIDE Paradise™ on Instagram ↗</a></div>
+<div class="social-row"><a href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">FOLLOW PRIDE PARADISE™ ON INSTAGRAM® ↗</a></div>
+<div class="brand-network" aria-label="Associated brands">
+<details class="brand-module"><summary><span class="brand-wordmark righteous">RIGHTEOUS REALITY</span><span class="brand-subtitle">ENTERTAINMENT™</span></summary><p>RIGHTEOUS REALITY Entertainment™ is the production and content authority for PRIDE Paradise™.</p></details>
+<details class="brand-module"><summary><span class="brand-wordmark unexpected">UNEXPECTED</span><span class="brand-subtitle">TV</span></summary><p>Unexpected TV brand information and its role in this production will be published here.</p></details>
+<details class="brand-module"><summary><span class="brand-mark">R</span><span class="brand-wordmark network">REIGNSOUND™</span><span class="brand-subtitle">CASTING NETWORK™</span></summary><p>Reignsound™ Casting Network™ is the developing network identity for casting opportunities and connections. Reignsound Casting™ provides the technology and intake experience.</p></details>
+</div>
 </div>
 </section>
 </main>
@@ -237,13 +262,13 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <a class="footer-logo-link" href="https://reignsound.com/" aria-label="Reignsound.com official website">
 <img class="footer-logo" src="https://reignsound.com/assets/reignsound-com-wordmark-20261030.svg" alt="REIGNSOUND.com">
 </a>
-<p class="footer-brand-description">Reignsound Casting™ | Reignsound.com Application</p>
+<p class="footer-brand-description">Reignsound Casting™ | Auditions, Casting Calls &amp; Gigs</p>
 <p class="copyright">© Reignsound™: All rights reserved.</p>
 </div>
 <section class="provenance" aria-labelledby="provenance-title">
 <h2 class="provenance-title" id="provenance-title">Documentation &amp; Technology</h2>
 <dl class="provenance-list">
-<div><dt>Website</dt><dd>Reignsound.com · Reignsound Casting™</dd></div>
+<div><dt>Website</dt><dd>reignsound.com · Reignsound Casting™</dd></div>
 <div><dt>Technology standard</dt><dd>Reignsound Web™ <span class="provenance-version">Pre-v1 · Shared runtime not yet deployed</span></dd></div>
 <div><dt>Site release</dt><dd>Preview · Not yet released</dd></div>
 <div><dt>Content authority</dt><dd>RIGHTEOUS REALITY Entertainment™</dd></div>
