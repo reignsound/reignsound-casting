@@ -204,6 +204,16 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 @media(max-width:800px){.header-logo{width:clamp(155px,25vw,220px);max-height:32px}.brand-placeholder{gap:8px}}
 @media(max-width:560px){.header-logo{width:clamp(135px,39vw,185px);max-height:28px}.header-application{font-size:8px!important;letter-spacing:.1em!important}}
 
+
+
+/* Desktop footer alignment: center the complete two-column unit and its left brand stack. */
+@media(min-width:801px){
+ .footer-inner{max-width:1000px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding-inline:24px}
+ .footer-brand{align-items:center;text-align:center}
+ .footer-show-logo{object-position:center}
+ .footer-logo-link{justify-content:center}
+ .footer-logo{object-position:center}
+}
 </style>
 </head>
 <body>
@@ -253,7 +263,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <article class="citycard" id="new-york-audition"><h3 style="color:#ff963f">♡ NEW YORK, NY</h3><p>Live audition opportunity in New York City.</p><div class="private">PRIVATE LOCATION · PROVIDED AFTER RSVP</div></article>
 <article class="citycard houston" id="houston-audition"><h3 style="color:#c5ff54">♡ HOUSTON, TX</h3><p>Live audition opportunity in Houston, Texas.</p><div class="private">Private location · Provided after RSVP</div></article>
 </div>
-<div class="notice">Audition location, scheduling, and participation details must be confirmed directly by the official casting team. Do not travel to an audition location without receiving official instructions. To express interest in a potential additional city, contact the official PRIDE Paradise™ Instagram® account.</div>
+<div class="notice">Audition location, scheduling, and participation details must be confirmed directly by the official casting team. Do not travel to an audition location without receiving official instructions.</div>
 </div>
 </section>
 <section class="section alt">
