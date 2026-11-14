@@ -28,6 +28,45 @@
 @media(max-width:800px){.wrap{width:min(var(--max),calc(100% - 32px))}.production-note{display:none}.hero-grid{grid-template-columns:1fr;gap:8px}.hero-copy{text-align:center}.hero h1{font-size:clamp(76px,16vw,130px)}.hero-script{transform:rotate(-4deg);transform-origin:center}.casting-callout{margin-inline:auto}.host-card{min-height:390px;max-width:520px;margin:0 auto;width:100%}.host-card img{max-height:430px}.host-label{right:8px}.section{padding:62px 0}.footgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.topbar{min-height:72px}.brand-placeholder{font-size:18px}.nav-actions{gap:12px}.instagram{display:none}.navcta{min-height:40px;padding:0 14px;font-size:10px}.hero{padding:46px 0 56px}.hero h1{font-size:clamp(66px,17vw,92px)}.hero-script{font-size:clamp(52px,13vw,70px)}.showline{font-size:11px}.tagline{font-size:10px}.host-card{min-height:320px}.host-card img{max-height:360px}.grid,.auditions,.requirements,.ways{grid-template-columns:1fr}.grid{gap:12px}.tile{min-height:0}.section{padding:52px 0}.h2{font-size:38px}.lead{font-size:15px}.footgrid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Reignsound UI refinements */
+:root{--bg:#080808;--panel:#111;--panel2:#171717;--line:rgba(255,255,255,.13);--muted:#b8b8bd;--max:1160px}
+body{background:#080808}
+.shell{background:radial-gradient(ellipse at 50% -12%,rgba(133,31,183,.19),transparent 42%),#080808}
+.wrap{width:min(var(--max),calc(100% - 56px))}
+.topbar{min-height:76px}
+.nav-actions{gap:18px}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{font:500 10px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#c5c5ca;transition:color .2s ease}
+.nav-links a:hover,.instagram:hover{color:#fff}
+.navcta,.btn{border-radius:7px;box-shadow:none;background:linear-gradient(105deg,#ed42b6,#8745d7)}
+.hero{padding:58px 0 70px}
+.section{padding:72px 0}
+.section-head{max-width:760px}
+.lead{font-size:16px;line-height:1.75}
+.tile,.citycard,.way{border-radius:10px}
+.tile{background:linear-gradient(145deg,rgba(34,18,39,.74),rgba(15,15,17,.98));}
+.citycard{background:linear-gradient(145deg,rgba(34,18,39,.72),#101012)}
+.notice{border-radius:0 7px 7px 0}
+.footer{padding:0;background:#101113;color:#aeb0b5}
+.footgrid{padding:34px 0 30px;grid-template-columns:1.15fr 1fr 1.2fr;gap:36px}
+.footbrand{font-size:18px;letter-spacing:-.03em}
+.footgrid strong{color:#f5f5f5;font:600 10px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+.footgrid p{line-height:1.7}
+.footgrid a{color:#d6d6db;text-decoration:none}
+.footgrid a:hover{color:#fff}
+.footer-bottom{margin:0;padding:17px 0 20px;color:#8f9299;border-top:1px solid rgba(255,255,255,.1);font-size:9px}
+.reignsound-footer{background:#080808;border-top:1px solid rgba(255,255,255,.1);padding:30px 0 24px}
+.reignsound-footer-inner{width:min(var(--max),calc(100% - 56px));margin:0 auto;text-align:center}
+.reignsound-wordmark{display:inline-flex;align-items:center;justify-content:center;width:min(250px,68vw);min-height:34px}
+.reignsound-wordmark img{width:100%;max-height:48px;object-fit:contain}
+.reignsound-footer-inner>p{margin:10px 0 0;color:#8f9299;font:500 9px "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
+.reignsound-footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:25px;padding-top:15px;border-top:1px solid rgba(255,255,255,.1);color:#85878d;font:400 9px "IBM Plex Mono",monospace;letter-spacing:.04em}
+.reignsound-footer-bottom a{color:#bfc1c6;text-decoration:none}
+.reignsound-footer-bottom a:hover{color:#fff}
+@media(max-width:800px){.wrap{width:min(var(--max),calc(100% - 32px))}.nav-links{display:none}.footgrid{grid-template-columns:1fr 1fr;gap:24px}.reignsound-footer-inner{width:calc(100% - 32px)}}
+@media(max-width:560px){.topbar{min-height:70px}.section{padding:54px 0}.footgrid{grid-template-columns:1fr;gap:18px}.footer-bottom{flex-direction:column}.reignsound-footer-bottom{flex-direction:column;align-items:center;gap:8px}}
+
 </style>
 </head>
 <body>
@@ -36,8 +75,13 @@
 <a class="brand-placeholder" href="#" aria-label="PRIDE Paradise home">PRIDE <span>Paradise</span></a>
 <div class="production-note">A RIGHTEOUS REALITY Entertainment Production</div>
 <nav class="nav-actions" aria-label="Main navigation">
+<div class="nav-links">
+<a href="#experience">The experience</a>
+<a href="#auditions">Auditions</a>
+<a href="#eligibility">Eligibility</a>
+</div>
 <a class="instagram" href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-<a class="navcta" href="#casting">Casting details</a>
+<a class="navcta" href="#apply">Apply / intake</a>
 </nav>
 </header>
 <main>
@@ -61,7 +105,7 @@
 </div>
 </div>
 </section>
-<section class="section alt" id="casting">
+<section class="section alt" id="experience">
 <div class="wrap">
 <div class="section-head"><div class="kicker">The experience</div><h2 class="h2">Love has room to surprise you.</h2><p class="lead">Real people. Real connections. Island vibes, flirts and feels, drama, iconic moments, and love without limits. PRIDE Paradise is looking for bold, beautiful, and unapologetic singles ready to show up as themselves.</p></div>
 <div class="grid">
@@ -110,11 +154,38 @@
 <footer class="footer">
 <div class="wrap">
 <div class="footgrid">
-<div><div class="footbrand">PRIDE Paradise</div><p>A production of <strong>RIGHTEOUS REALITY Entertainment</strong>.</p></div>
-<div><strong>Show host</strong><p>IIIAMDESS</p><p><a href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">Official Instagram ↗</a></p></div>
-<div><strong>Technology and intake</strong><p>Facilitated by Reignsound™.</p><p>Reignsound provides technology for this casting intake and is not the owner or producer of the show.</p></div>
+<div>
+<div class="footbrand">PRIDE Paradise</div>
+<p><strong>A RIGHTEOUS REALITY Entertainment Production.</strong></p>
 </div>
-<div class="footer-bottom"><span>© RIGHTEOUS REALITY Entertainment. All rights reserved.</span><span>Reignsound Web™ · Casting intake platform</span></div>
+<div>
+<strong>Production</strong>
+<p>RIGHTEOUS REALITY Entertainment</p>
+<p>Show host: IIIAMDESS</p>
+<p><a href="https://www.instagram.com/prideparadise_/" target="_blank" rel="noopener noreferrer">PRIDE Paradise on Instagram ↗</a></p>
+</div>
+<div>
+<strong>Technology and casting intake</strong>
+<p>Reignsound™ facilitates the technology and intake for this casting experience.</p>
+<p>Reignsound™ is not the owner or producer of PRIDE Paradise.</p>
+</div>
+</div>
+<div class="footer-bottom">
+<span>PRIDE Paradise is a RIGHTEOUS REALITY Entertainment production.</span>
+<span>Technology and intake facilitated by Reignsound™.</span>
+</div>
+</div>
+<div class="reignsound-footer">
+<div class="reignsound-footer-inner">
+<a class="reignsound-wordmark" href="https://reignsound.com/" aria-label="Reignsound official website">
+<img src="https://reignsound.com/assets/reignsound-com-wordmark.svg" alt="Reignsound™">
+</a>
+<p>Reignsound Web™</p>
+<div class="reignsound-footer-bottom">
+<span>© Reignsound™: All rights reserved.</span>
+<a href="https://reignsound.com/">reignsound.com ↗</a>
+</div>
+</div>
 </div>
 </footer>
 </div>
