@@ -223,6 +223,60 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 @media(max-width:800px){.header-logo{width:clamp(155px,25vw,220px);max-height:32px}.brand-placeholder{gap:8px}}
 @media(max-width:560px){.header-logo{width:clamp(135px,39vw,185px);max-height:28px}.header-application{font-size:8px!important;letter-spacing:.1em!important}}
 
+
+/* Mobile header layout: keep the brand and navigation inside the viewport */
+@media(max-width:560px){
+ .topbar{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:8px;
+  width:calc(100% - 32px);
+ }
+ .brand-placeholder{
+  display:flex;
+  align-items:center;
+  flex:initial;
+  width:100%;
+  min-width:0;
+  gap:6px;
+ }
+ .header-home-link{
+  display:flex;
+  flex:0 1 clamp(100px,34vw,128px);
+  width:clamp(100px,34vw,128px);
+  min-width:0;
+  overflow:visible;
+ }
+ .header-logo{
+  display:block;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  height:auto;
+  max-height:28px;
+  flex:1 1 auto;
+  object-fit:contain;
+  object-position:left center;
+ }
+ .header-application{
+  flex:0 0 auto;
+  font-size:8px!important;
+  letter-spacing:.08em!important;
+ }
+ .nav-actions{
+  display:flex;
+  flex:0 0 auto;
+  min-width:0;
+  gap:0;
+ }
+ .navcta{
+  min-height:40px;
+  padding-inline:12px;
+  white-space:nowrap;
+ }
+}
+
 </style>
 </head>
 <body>
