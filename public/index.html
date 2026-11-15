@@ -223,6 +223,82 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 @media(max-width:800px){.header-logo{width:clamp(155px,25vw,220px);max-height:32px}.brand-placeholder{gap:8px}}
 @media(max-width:560px){.header-logo{width:clamp(135px,39vw,185px);max-height:28px}.header-application{font-size:8px!important;letter-spacing:.1em!important}}
 
+
+/* Mobile header layout: keep the brand and navigation inside the viewport */
+@media(max-width:560px){
+ .topbar{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:8px;
+  width:calc(100% - 32px);
+ }
+ .brand-placeholder{
+  display:flex;
+  align-items:center;
+  flex:initial;
+  width:100%;
+  min-width:0;
+  gap:6px;
+ }
+ .header-home-link{
+  display:flex;
+  flex:0 1 clamp(100px,34vw,128px);
+  width:clamp(100px,34vw,128px);
+  min-width:0;
+  overflow:visible;
+ }
+ .header-logo{
+  display:block;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  height:auto;
+  max-height:28px;
+  flex:1 1 auto;
+  object-fit:contain;
+  object-position:left center;
+ }
+ .header-application{
+  flex:0 0 auto;
+  font-size:8px!important;
+  letter-spacing:.08em!important;
+ }
+ .nav-actions{
+  display:flex;
+  flex:0 0 auto;
+  min-width:0;
+  gap:0;
+ }
+ .navcta{
+  min-height:40px;
+  padding-inline:12px;
+  white-space:nowrap;
+ }
+}
+
+
+/* Consistent, proportionate heart marks across casting cards */
+.heart-icon{
+ display:inline-block;
+ width:20px !important;
+ height:20px !important;
+ min-width:20px;
+ max-width:20px;
+ aspect-ratio:1 / 1;
+ flex:0 0 20px;
+ vertical-align:-4px;
+ overflow:visible;
+ transform:none !important;
+}
+.citycard h3 .heart-icon{width:21px !important;height:21px !important;min-width:21px;max-width:21px;flex-basis:21px;margin-right:5px;vertical-align:-4px}
+.req .heart-icon{width:20px !important;height:20px !important;vertical-align:-4px}
+.tile .heart-icon{width:22px !important;height:22px !important;vertical-align:-4px}
+\n
+
+/* PRIDE Paradise™ — seven complete infinity loops, then a seven-second pause. */
+.eyebrow{display:inline-block;position:relative;transform:translate3d(0,0,0);will-change:transform}
+@media(prefers-reduced-motion:reduce){.eyebrow{animation:none!important;transform:none!important;will-change:auto}}
 </style>
 </head>
 <body>
@@ -259,7 +335,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <div class="wrap">
 <div class="section-head"><div class="kicker">The experience</div><h2 class="h2">Love has room to surprise you.</h2><p class="lead"><em>Real people. Real connections.</em> PRIDE Paradise™ is looking for bold, beautiful, and unapologetic singles ready to show up as themselves.</p></div>
 <div class="grid">
-<article class="tile"><div class="symbol" aria-hidden="true">♡</div><h3>REAL CONNECTIONS</h3><p>Real people, meaningful chemistry, and the possibility of something special.</p></article>
+<article class="tile"><div class="symbol" aria-hidden="true"><svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21C10.2 19.4 3 13.2 3 8.1 3 4.9 5.2 2.5 8.2 2.5 10 2.5 11.2 3.4 12 4.8 12.8 3.4 14 2.5 15.8 2.5 18.8 2.5 21 4.9 21 8.1 21 13.2 13.8 19.4 12 21Z"/></svg></div><h3>REAL CONNECTIONS</h3><p>Real people, meaningful chemistry, and the possibility of something special.</p></article>
 <article class="tile"><div class="symbol" aria-hidden="true">✧</div><h3>ISLAND VIBES</h3><p>Flirts, feels, and a tropical setting made for unforgettable experiences.</p></article>
 <article class="tile"><div class="symbol" aria-hidden="true">✦</div><h3>ICONIC MOMENTS</h3><p>Big personalities, unexpected turns, and moments worth remembering.</p></article>
 </div>
@@ -269,8 +345,8 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <div class="wrap">
 <div class="kicker">Live auditions</div><h2 class="h2">Confirmed in-person auditions.</h2><p class="lead">At this time, in-person live auditions are confirmed to be held in Houston, Texas, and New York, New York.</p>
 <div class="auditions">
-<a class="citycard card-link" id="new-york-audition" href="https://www.instagram.com/p/DbEmnyTkecV/?utm_source=ig_web_copy_link&amp;dlrf=MzRlODBiNWFlZA==&amp;srtk=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" aria-label="View the official PRIDE Paradise™ New York audition announcement on Instagram"><h3 style="color:#ff963f">♡ NEW YORK, NY</h3><p>Live audition opportunity in New York City.</p><div class="private">PRIVATE LOCATION · PROVIDED AFTER RSVP</div></a>
-<a class="citycard houston card-link" id="houston-audition" href="https://www.instagram.com/p/DbEmnyTkecV/?utm_source=ig_web_copy_link&amp;dlrf=MzRlODBiNWFlZA==&amp;srtk=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" aria-label="View the official PRIDE Paradise™ Houston audition announcement on Instagram"><h3 style="color:#c5ff54">♡ HOUSTON, TX</h3><p>Live audition opportunity in Houston, Texas.</p><div class="private">Private location · Provided after RSVP</div></a>
+<a class="citycard card-link" id="new-york-audition" href="https://www.instagram.com/p/DbEmnyTkecV/?utm_source=ig_web_copy_link&amp;dlrf=MzRlODBiNWFlZA==&amp;srtk=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" aria-label="View the official PRIDE Paradise™ New York audition announcement on Instagram"><h3 style="color:#ff963f"><svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21C10.2 19.4 3 13.2 3 8.1 3 4.9 5.2 2.5 8.2 2.5 10 2.5 11.2 3.4 12 4.8 12.8 3.4 14 2.5 15.8 2.5 18.8 2.5 21 4.9 21 8.1 21 13.2 13.8 19.4 12 21Z"/></svg> NEW YORK, NY</h3><p>Live audition opportunity in New York City.</p><div class="private">PRIVATE LOCATION · PROVIDED AFTER RSVP</div></a>
+<a class="citycard houston card-link" id="houston-audition" href="https://www.instagram.com/p/DbEmnyTkecV/?utm_source=ig_web_copy_link&amp;dlrf=MzRlODBiNWFlZA==&amp;srtk=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" aria-label="View the official PRIDE Paradise™ Houston audition announcement on Instagram"><h3 style="color:#c5ff54"><svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21C10.2 19.4 3 13.2 3 8.1 3 4.9 5.2 2.5 8.2 2.5 10 2.5 11.2 3.4 12 4.8 12.8 3.4 14 2.5 15.8 2.5 18.8 2.5 21 4.9 21 8.1 21 13.2 13.8 19.4 12 21Z"/></svg> HOUSTON, TX</h3><p>Live audition opportunity in Houston, Texas.</p><div class="private">Private location · Provided after RSVP</div></a>
 </div>
 <div class="notice">Audition location, scheduling, and participation details must be confirmed directly by the official casting team.</div>
 </div>
@@ -279,9 +355,9 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <div class="wrap">
 <div class="kicker">Are you...</div><h2 class="h2">The next face of paradise?</h2>
 <div class="requirements">
-<div class="req"><span class="emoji" aria-hidden="true">♡</span><div><b>21 OR OLDER</b><p>You must be at least 21 years of age.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true"><svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21C10.2 19.4 3 13.2 3 8.1 3 4.9 5.2 2.5 8.2 2.5 10 2.5 11.2 3.4 12 4.8 12.8 3.4 14 2.5 15.8 2.5 18.8 2.5 21 4.9 21 8.1 21 13.2 13.8 19.4 12 21Z"/></svg></span><div><b>21 OR OLDER</b><p>You must be at least 21 years of age.</p></div></div>
 <div class="req"><span class="emoji" aria-hidden="true">✧</span><div><b>LGBTQ+</b><p>You identify as LGBTQ+.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">♡</span><div><b>SINGLE AND READY</b><p>You are single and genuinely open to finding love.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true"><svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21C10.2 19.4 3 13.2 3 8.1 3 4.9 5.2 2.5 8.2 2.5 10 2.5 11.2 3.4 12 4.8 12.8 3.4 14 2.5 15.8 2.5 18.8 2.5 21 4.9 21 8.1 21 13.2 13.8 19.4 12 21Z"/></svg></span><div><b>SINGLE AND READY</b><p>You are single and genuinely open to finding love.</p></div></div>
 <div class="req"><span class="emoji" aria-hidden="true">✦</span><div><b>CAMERA READY</b><p>You are confident, outgoing, and ready to be your authentic self on camera.</p></div></div>
 <div class="req"><span class="emoji" aria-hidden="true">✈</span><div><b>TRAVEL READY</b><p>You are available and willing to travel to a tropical location for filming.</p></div></div>
 <div class="req"><span class="emoji" aria-hidden="true">✧</span><div><b>GOOD ENERGY</b><p>You bring positivity, respect, and an open mind to new experiences.</p></div></div>
@@ -330,5 +406,31 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 </div>
 </footer>
 </div>
+<script>
+(() => {
+  const eyebrow = document.querySelector(".eyebrow");
+  if (!eyebrow || typeof eyebrow.animate !== "function") return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const width = window.innerWidth || document.documentElement.clientWidth || 375;
+  const horizontalRadius = Math.min(58, Math.max(24, width * 0.12));
+  const verticalRadius = width <= 600 ? 17 : 25;
+  const frames = [];
+  const loops = 7;
+  const samplesPerLoop = 48;
+  const movingFraction = 42 / 49;
+  for (let loop = 0; loop < loops; loop += 1) {
+    for (let sample = 0; sample < samplesPerLoop; sample += 1) {
+      const phase = (sample / samplesPerLoop) * Math.PI * 2;
+      const progress = ((loop + sample / samplesPerLoop) / loops) * movingFraction;
+      const x = horizontalRadius * Math.sin(phase);
+      const y = verticalRadius * Math.sin(phase * 2);
+      frames.push({offset:progress,transform:"translate3d("+x.toFixed(2)+"px,"+y.toFixed(2)+"px,0)",easing:"linear"});
+    }
+  }
+  frames.push({offset:movingFraction,transform:"translate3d(0,0,0)",easing:"linear"});
+  frames.push({offset:1,transform:"translate3d(0,0,0)"});
+  eyebrow.animate(frames,{duration:49000,iterations:Infinity,easing:"linear",fill:"both"});
+})();
+</script>
 </body>
 </html>
