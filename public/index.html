@@ -296,9 +296,6 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 .tile .heart-icon{width:22px !important;height:22px !important;vertical-align:-4px}
 \n
 
-/* PRIDE Paradise™ — seven complete infinity loops, then a seven-second pause. */
-.eyebrow{display:inline-block;position:relative;transform:translate3d(0,0,0);will-change:transform}
-@media(prefers-reduced-motion:reduce){.eyebrow{animation:none!important;transform:none!important;will-change:auto}}
 </style>
 </head>
 <body>
@@ -406,31 +403,6 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 </div>
 </footer>
 </div>
-<script>
-(() => {
-  const eyebrow = document.querySelector(".eyebrow");
-  if (!eyebrow || typeof eyebrow.animate !== "function") return;
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const width = window.innerWidth || document.documentElement.clientWidth || 375;
-  const horizontalRadius = Math.min(58, Math.max(24, width * 0.12));
-  const verticalRadius = width <= 600 ? 17 : 25;
-  const frames = [];
-  const loops = 7;
-  const samplesPerLoop = 48;
-  const movingFraction = 42 / 49;
-  for (let loop = 0; loop < loops; loop += 1) {
-    for (let sample = 0; sample < samplesPerLoop; sample += 1) {
-      const phase = (sample / samplesPerLoop) * Math.PI * 2;
-      const progress = ((loop + sample / samplesPerLoop) / loops) * movingFraction;
-      const x = horizontalRadius * Math.sin(phase);
-      const y = verticalRadius * Math.sin(phase * 2);
-      frames.push({offset:progress,transform:"translate3d("+x.toFixed(2)+"px,"+y.toFixed(2)+"px,0)",easing:"linear"});
-    }
-  }
-  frames.push({offset:movingFraction,transform:"translate3d(0,0,0)",easing:"linear"});
-  frames.push({offset:1,transform:"translate3d(0,0,0)"});
-  eyebrow.animate(frames,{duration:49000,delay:7000,iterations:Infinity,easing:"linear",fill:"both"});
-})();
-</script>
+
 </body>
 </html>
