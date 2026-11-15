@@ -277,6 +277,32 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
  }
 }
 
+
+/* PRIDE Paradise™ eyebrow: seven slow infinity loops, then a seven-second rest */
+.eyebrow{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  margin-inline:auto;
+  position:relative;
+  transform:translateY(0);
+  offset-path:path("M 0 0 C 0 -15 13 -24 27 -15 C 41 -6 41 6 27 15 C 13 24 0 15 0 0 C 0 -15 -13 -24 -27 -15 C -41 -6 -41 6 -27 15 C -13 24 0 15 0 0");
+  offset-anchor:center;
+  offset-rotate:0deg;
+  animation:pride-infinity-cycle 28s ease-in-out infinite;
+  will-change:offset-distance,transform;
+}
+@keyframes pride-infinity-cycle{
+  0%{offset-distance:0%;transform:translateY(0)}
+  1.5%{offset-distance:0%;transform:translateY(-9px)}
+  73.5%{offset-distance:700%;transform:translateY(-9px)}
+  75%{offset-distance:700%;transform:translateY(0)}
+  100%{offset-distance:700%;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+ .eyebrow{animation:none!important;offset-path:none;transform:none;will-change:auto}
+}
+
 </style>
 </head>
 <body>
@@ -293,7 +319,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <section class="hero">
 <div class="wrap hero-grid">
 <div class="hero-copy">
-<div class="eyebrow">One paradise. Endless possibilities.</div>
+<div class="eyebrow" aria-label="One paradise. Endless possibilities.">One paradise. Endless possibilities.</div>
 <img class="pride-paradise-logo" src="/assets/pride-paradise/pride-paradise-logo.png" alt="PRIDE Paradise™" fetchpriority="high">
 <div class="showline">A new LGBTQ+ dating reality show</div>
 <div class="tagline">Where love is love and everyone belongs</div>
