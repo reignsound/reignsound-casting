@@ -294,6 +294,75 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 .citycard h3 .heart-icon{width:21px !important;height:21px !important;min-width:21px;max-width:21px;flex-basis:21px;margin-right:5px;vertical-align:-4px}
 .req .heart-icon{width:20px !important;height:20px !important;vertical-align:-4px}
 .tile .heart-icon{width:22px !important;height:22px !important;vertical-align:-4px}
+\n
+/* PRIDE Paradise™ — seven visible infinity passes, then a seven-second rest */
+.eyebrow{
+ display:inline-block;
+ position:relative;
+ transform:translate3d(0,0,0);
+ -webkit-transform:translate3d(0,0,0);
+ animation:pride-infinity 49s linear infinite;
+ -webkit-animation:pride-infinity 49s linear infinite;
+ will-change:transform;
+}
+@keyframes pride-infinity{
+ 0%,1.5%{transform:translate3d(0,0,0)}
+ 2%{transform:translate3d(0,-24px,0)}
+ 2.8%{transform:translate3d(48px,-42px,0)}
+ 3.6%{transform:translate3d(88px,-24px,0)}
+ 4.4%{transform:translate3d(48px,0,0)}
+ 5.2%{transform:translate3d(0,-24px,0)}
+ 6%{transform:translate3d(-48px,-42px,0)}
+ 6.8%{transform:translate3d(-88px,-24px,0)}
+ 7.6%{transform:translate3d(-48px,0,0)}
+ 8.4%{transform:translate3d(0,-24px,0)}
+ 8.5%,100%{transform:translate3d(0,0,0)}
+}
+@-webkit-keyframes pride-infinity{
+ 0%,1.5%{-webkit-transform:translate3d(0,0,0)}
+ 2%{-webkit-transform:translate3d(0,-24px,0)}
+ 2.8%{-webkit-transform:translate3d(48px,-42px,0)}
+ 3.6%{-webkit-transform:translate3d(88px,-24px,0)}
+ 4.4%{-webkit-transform:translate3d(48px,0,0)}
+ 5.2%{-webkit-transform:translate3d(0,-24px,0)}
+ 6%{-webkit-transform:translate3d(-48px,-42px,0)}
+ 6.8%{-webkit-transform:translate3d(-88px,-24px,0)}
+ 7.6%{-webkit-transform:translate3d(-48px,0,0)}
+ 8.4%{-webkit-transform:translate3d(0,-24px,0)}
+ 8.5%,100%{-webkit-transform:translate3d(0,0,0)}
+}
+@media(max-width:600px){
+ .eyebrow{animation-name:pride-infinity-mobile;-webkit-animation-name:pride-infinity-mobile}
+}
+@keyframes pride-infinity-mobile{
+ 0%,1.5%{transform:translate3d(0,0,0)}
+ 2%{transform:translate3d(0,-20px,0)}
+ 2.8%{transform:translate3d(30px,-34px,0)}
+ 3.6%{transform:translate3d(58px,-20px,0)}
+ 4.4%{transform:translate3d(30px,0,0)}
+ 5.2%{transform:translate3d(0,-20px,0)}
+ 6%{transform:translate3d(-30px,-34px,0)}
+ 6.8%{transform:translate3d(-58px,-20px,0)}
+ 7.6%{transform:translate3d(-30px,0,0)}
+ 8.4%{transform:translate3d(0,-20px,0)}
+ 8.5%,100%{transform:translate3d(0,0,0)}
+}
+@-webkit-keyframes pride-infinity-mobile{
+ 0%,1.5%{-webkit-transform:translate3d(0,0,0)}
+ 2%{-webkit-transform:translate3d(0,-20px,0)}
+ 2.8%{-webkit-transform:translate3d(30px,-34px,0)}
+ 3.6%{-webkit-transform:translate3d(58px,-20px,0)}
+ 4.4%{-webkit-transform:translate3d(30px,0,0)}
+ 5.2%{-webkit-transform:translate3d(0,-20px,0)}
+ 6%{-webkit-transform:translate3d(-30px,-34px,0)}
+ 6.8%{-webkit-transform:translate3d(-58px,-20px,0)}
+ 7.6%{-webkit-transform:translate3d(-30px,0,0)}
+ 8.4%{-webkit-transform:translate3d(0,-20px,0)}
+ 8.5%,100%{-webkit-transform:translate3d(0,0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+ .eyebrow{animation:none!important;-webkit-animation:none!important;transform:none!important;-webkit-transform:none!important;will-change:auto}
+}
 \n</style>
 </head>
 <body>
