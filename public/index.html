@@ -226,51 +226,50 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 @media(max-width:560px){.header-logo{width:clamp(135px,39vw,185px);max-height:28px}.header-application{font-size:8px!important;letter-spacing:.1em!important}}
 
 
-/* Mobile header layout: keep the brand and navigation inside the viewport */
+/* Mobile header layout: reserve a clear, independent area for the brand mark. */
 @media(max-width:560px){
  .topbar{
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
   align-items:center;
-  gap:8px;
+  gap:10px;
   width:calc(100% - 32px);
  }
  .brand-placeholder{
   display:flex;
   align-items:center;
-  flex:initial;
   width:100%;
   min-width:0;
-  gap:6px;
+  gap:0;
  }
  .header-home-link{
   display:flex;
-  flex:0 1 clamp(100px,34vw,128px);
-  width:clamp(100px,34vw,128px);
+  flex:0 1 100%;
+  width:100%;
   min-width:0;
   overflow:visible;
+  position:relative;
+  z-index:3;
  }
  .header-logo{
   display:block;
-  width:100%;
+  width:clamp(150px,43vw,185px);
   max-width:100%;
   min-width:0;
   height:auto;
-  max-height:28px;
-  flex:1 1 auto;
+  max-height:34px;
+  flex:0 1 auto;
   object-fit:contain;
   object-position:left center;
  }
- .header-application{
-  flex:0 0 auto;
-  font-size:8px!important;
-  letter-spacing:.08em!important;
- }
+ .header-application{display:none!important}
  .nav-actions{
   display:flex;
   flex:0 0 auto;
   min-width:0;
   gap:0;
+  position:relative;
+  z-index:2;
  }
  .navcta{
   min-height:40px;
@@ -479,75 +478,8 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 </div>
 
 
-<div class="iii-amdess-flyer-widget" id="iii-amdess-flyer-widget" aria-label="IIIAMDESS live-stream flyer">
-  <button class="iii-amdess-flyer-trigger" id="iii-amdess-flyer-trigger" type="button" aria-label="Open IIIAMDESS live-stream links">
-    <img src="/assets/iiiamdess/iiiamdess-live-flyer.webp" alt="IIIAMDESS presents DESSATHON — real behind the scenes of DESS life. Live on Twitch and Kick.">
-  </button>
-  <button class="iii-amdess-flyer-close" id="iii-amdess-flyer-close" type="button" aria-label="Dismiss flyer">×</button>
-</div>
-<div class="iii-amdess-menu" id="iii-amdess-menu" hidden>
-  <section class="iii-amdess-menu-panel" role="dialog" aria-modal="true" aria-labelledby="iii-amdess-menu-title">
-    <button class="iii-amdess-menu-close" id="iii-amdess-menu-close" type="button" aria-label="Close streaming links">×</button>
-    <img class="iii-amdess-menu-art" src="/assets/iiiamdess/iiiamdess-live-flyer.webp" alt="">
-    <div class="iii-amdess-menu-content">
-      <p class="iii-amdess-menu-kicker">Watch IIIAMDESS live</p>
-      <h2 class="iii-amdess-menu-title" id="iii-amdess-menu-title">Choose a streaming platform.</h2>
-      <div class="iii-amdess-platform-links">
-        <a class="iii-amdess-platform-link" href="https://kick.com/iiammdess/" target="_blank" rel="noopener noreferrer">IIIAMDESS's Kick® ↗</a>
-        <a class="iii-amdess-platform-link" href="https://www.twitch.tv/iiiiamdess/" target="_blank" rel="noopener noreferrer">IIIAMDESS's Twitch® ↗</a>
-      </div>
-    </div>
-  </section>
-</div>
-<script>
-(() => {
-  const flyer = document.getElementById('iii-amdess-flyer-widget');
-  const flyerTrigger = document.getElementById('iii-amdess-flyer-trigger');
-  const dismissButton = document.getElementById('iii-amdess-flyer-close');
-  const menu = document.getElementById('iii-amdess-menu');
-  const menuClose = document.getElementById('iii-amdess-menu-close');
-  if (!flyer || !flyerTrigger || !dismissButton || !menu || !menuClose) return;
 
-  const dismissedKey = 'reignsoundCasting.iiiAmdessFlyerDismissed';
-  let lastFocusedElement = null;
-  let dismissed = false;
-  try { dismissed = sessionStorage.getItem(dismissedKey) === '1'; } catch (_) {}
 
-  const revealFlyer = () => {
-    if (!dismissed && window.scrollY > 48) {
-      flyer.classList.add('is-visible');
-      window.removeEventListener('scroll', revealFlyer);
-    }
-  };
-  if (!dismissed) {
-    if (window.scrollY > 48) revealFlyer();
-    else window.addEventListener('scroll', revealFlyer, { passive: true });
-  }
-
-  const closeMenu = () => {
-    menu.hidden = true;
-    if (lastFocusedElement) lastFocusedElement.focus();
-  };
-  flyerTrigger.addEventListener('click', () => {
-    lastFocusedElement = flyerTrigger;
-    menu.hidden = false;
-    menuClose.focus();
-  });
-  dismissButton.addEventListener('click', () => {
-    dismissed = true;
-    flyer.classList.remove('is-visible');
-    window.removeEventListener('scroll', revealFlyer);
-    try { sessionStorage.setItem(dismissedKey, '1'); } catch (_) {}
-  });
-  menuClose.addEventListener('click', closeMenu);
-  menu.addEventListener('click', event => {
-    if (event.target === menu) closeMenu();
-  });
-  document.addEventListener('keydown', event => {
-    if (!menu.hidden && event.key === 'Escape') closeMenu();
-  });
-})();
-</script>
-
+<!-- IIIAMDESS streaming flyer is withdrawn from the live page. -->
 </body>
 </html>
