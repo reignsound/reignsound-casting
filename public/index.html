@@ -843,6 +843,30 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 }
 @media(prefers-reduced-motion:reduce){.iii-amdess-flyer-widget,.iii-amdess-platform-link{transition:none!important}}
 
+
+/* Restore the approved centered PRIDE Paradise section treatments and emoji set. */
+#eligibility>.wrap>.kicker,
+#eligibility>.wrap>.h2,
+#casting .section-head{text-align:center}
+#casting .section-head{max-width:900px;margin:0 auto 22px}
+#casting .section-head .lead{margin-inline:auto}
+#eligibility .requirements{justify-items:stretch}
+#eligibility .req{flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center}
+#eligibility .req>div{width:100%;text-align:center}
+#eligibility .req .emoji{display:block;font-size:22px;line-height:1.2;text-align:center}
+#casting .grid>.tile{display:flex;flex-direction:column;align-items:center;text-align:center}
+#casting .grid>.tile .symbol{display:flex;align-items:center;justify-content:center;min-height:30px;width:100%;font-size:25px;line-height:1.2}
+#casting .grid>.tile h3,#casting .grid>.tile p{text-align:center}
+#auditions .auditions .citycard{align-items:center;text-align:center}
+#auditions .auditions .citycard h3,
+#auditions .auditions .citycard p,
+#auditions .auditions .citycard .private{text-align:center;width:100%}
+@media(max-width:560px){
+ #casting .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #casting .grid>.tile:nth-child(3){grid-column:1/-1;grid-row:2;justify-self:center;width:min(100%,calc(50% - 5px))}
+ #eligibility .req{align-items:center;text-align:center}
+}
+
 </style>
 </head>
 <body>
@@ -906,9 +930,9 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <div class="wrap">
 <div class="section-head"><div class="kicker">The experience</div><h2 class="h2">Love has room to surprise you.</h2><p class="lead"><em>Real people. Real connections.</em> PRIDE Paradise™ is looking for bold, beautiful, and unapologetic singles ready to show up as themselves.</p></div>
 <div class="grid">
-<article class="tile"><div class="symbol" aria-hidden="true"><svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21C10.5 19.7 3 13.5 3 8.5 3 5.5 5.2 3.5 8 3.5 9.7 3.5 11 4.4 12 5.8 13 4.4 14.3 3.5 16 3.5 18.8 3.5 21 5.5 21 8.5 21 13.5 13.5 19.7 12 21Z"/></svg></div><h3>REAL CONNECTIONS</h3><p>Real people, meaningful chemistry, and the possibility of something special.</p></article>
-<article class="tile"><div class="symbol" aria-hidden="true">✧</div><h3>ISLAND VIBES</h3><p>Flirts, feels, and a tropical setting made for unforgettable experiences.</p></article>
-<article class="tile"><div class="symbol" aria-hidden="true">🌟</div><h3>ICONIC MOMENTS</h3><p>Big personalities, unexpected turns, and moments worth remembering.</p></article>
+<article class="tile"><div class="symbol" aria-hidden="true">🔌</div><h3>REAL CONNECTIONS</h3><p>Real people, meaningful chemistry, and the possibility of something special.</p></article>
+<article class="tile"><div class="symbol" aria-hidden="true">🌴</div><h3>ISLAND VIBES</h3><p>Flirts, feels, and a tropical setting made for unforgettable experiences.</p></article>
+<article class="tile"><div class="symbol" aria-hidden="true">🤩</div><h3>ICONIC MOMENTS</h3><p>Big personalities, unexpected turns, and moments worth remembering.</p></article>
 </div>
 </div>
 </section>
@@ -926,12 +950,12 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 <div class="wrap">
 <div class="kicker">Are you...</div><h2 class="h2">The next face of paradise?</h2>
 <div class="requirements">
-<div class="req"><span class="emoji" aria-hidden="true"><svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21C10.5 19.7 3 13.5 3 8.5 3 5.5 5.2 3.5 8 3.5 9.7 3.5 11 4.4 12 5.8 13 4.4 14.3 3.5 16 3.5 18.8 3.5 21 5.5 21 8.5 21 13.5 13.5 19.7 12 21Z"/></svg></span><div><b>21 OR OLDER</b><p>You must be at least 21 years of age.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">✧</span><div><b>LGBTQ+</b><p>You identify as LGBTQ+.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true"><svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21C10.5 19.7 3 13.5 3 8.5 3 5.5 5.2 3.5 8 3.5 9.7 3.5 11 4.4 12 5.8 13 4.4 14.3 3.5 16 3.5 18.8 3.5 21 5.5 21 8.5 21 13.5 13.5 19.7 12 21Z"/></svg></span><div><b>SINGLE AND READY</b><p>You are single and genuinely open to finding love.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">✦</span><div><b>CAMERA READY</b><p>You are confident, outgoing, and ready to be your authentic self on camera.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">✈</span><div><b>TRAVEL READY</b><p>You are available and willing to travel to a tropical location for filming.</p></div></div>
-<div class="req"><span class="emoji" aria-hidden="true">✧</span><div><b>GOOD ENERGY</b><p>You bring positivity, respect, and an open mind to new experiences.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">🍾</span><div><b>21 OR OLDER</b><p>You must be at least 21 years of age.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">🏳️‍🌈</span><div><b>LGBTQ+</b><p>You identify as LGBTQ+.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">👤</span><div><b>SINGLE AND READY</b><p>You are single and genuinely open to finding love.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">🎥</span><div><b>CAMERA READY</b><p>You are confident, outgoing, and ready to be your authentic self on camera.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">✈️</span><div><b>TRAVEL READY</b><p>You are available and willing to travel to a tropical location for filming.</p></div></div>
+<div class="req"><span class="emoji" aria-hidden="true">👍🏽</span><div><b>GOOD ENERGY</b><p>You bring positivity, respect, and an open mind to new experiences.</p></div></div>
 </div>
 </div>
 </section>
