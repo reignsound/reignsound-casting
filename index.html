@@ -580,6 +580,25 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 @media(prefers-reduced-motion:reduce){
  .eyebrow{animation:none!important;-webkit-animation:none!important;transform:none!important;-webkit-transform:none!important;will-change:auto}
 }
+
+/* IIIAMDESS streaming flyer — scroll-triggered, dismissible popup */
+#iiiamdess-flyer-launcher{position:fixed;z-index:80;right:22px;bottom:22px;width:min(250px,calc(100vw - 40px));padding:7px;border:1px solid rgba(255,67,198,.8);border-radius:15px;background:#09060c;box-shadow:0 12px 42px rgba(0,0,0,.72),0 0 24px rgba(255,67,198,.25);opacity:0;visibility:hidden;transform:translateY(18px) scale(.97);transition:opacity .28s ease,transform .28s ease,visibility .28s;cursor:pointer}
+#iiiamdess-flyer-launcher.is-visible{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+#iiiamdess-flyer-launcher img{width:100%;height:auto;max-height:min(54vh,430px);object-fit:contain;border-radius:9px}
+#iiiamdess-flyer-launcher:focus-visible{outline:3px solid #fff;outline-offset:4px}
+#iiiamdess-flyer-close{position:absolute;top:-12px;right:-12px;display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:#111;color:#fff;font:600 22px/1 "IBM Plex Sans",sans-serif;cursor:pointer;box-shadow:0 3px 14px #000}
+#iiiamdess-link-menu{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:22px;background:rgba(0,0,0,.78);backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease}
+#iiiamdess-link-menu.is-open{opacity:1;visibility:visible}
+.iiiamdess-menu-panel{position:relative;width:min(100%,390px);padding:28px 22px 24px;border:1px solid rgba(255,67,198,.65);border-radius:18px;background:linear-gradient(155deg,#19101d,#080808 78%);box-shadow:0 18px 70px rgba(0,0,0,.75),0 0 30px rgba(255,67,198,.16);text-align:center}
+.iiiamdess-menu-panel h2{margin:0 35px 8px;font-size:22px;letter-spacing:-.03em}
+.iiiamdess-menu-panel p{margin:0 0 20px;color:#bdb4c0;font-size:12px}
+.iiiamdess-menu-links{display:grid;gap:11px}
+.iiiamdess-menu-links a{display:flex;align-items:center;justify-content:center;min-height:50px;padding:12px 16px;border:1px solid rgba(255,67,198,.55);border-radius:11px;background:#151018;color:#fff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.025em;transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.iiiamdess-menu-links a:hover{background:#29132a;border-color:#ff43c6;transform:translateY(-1px)}
+#iiiamdess-menu-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border:1px solid var(--rs-line);border-radius:50%;background:#111;color:#fff;font-size:21px;cursor:pointer}
+@media(max-width:560px){#iiiamdess-flyer-launcher{right:14px;bottom:14px;width:min(205px,calc(100vw - 34px));padding:5px}#iiiamdess-flyer-launcher img{max-height:42vh}.iiiamdess-menu-panel{padding:26px 18px 20px}}
+@media(prefers-reduced-motion:reduce){#iiiamdess-flyer-launcher,#iiiamdess-link-menu{transition:none}}
+
 </style>
 </head>
 <body>
@@ -687,5 +706,74 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 </div>
 </footer>
 </div>
+
+<!-- IIIAMDESS live-streaming flyer -->
+<aside id="iiiamdess-flyer-launcher" aria-label="IIIAMDESS live streaming flyer" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="iiiamdess-link-menu">
+  <img src="/assets/iiiamdess/iiiamdess-live-flyer.webp" alt="IIIAMDESS presents DESSATHON — live on Twitch and Kick. Collaborations will be announced as well." loading="lazy">
+  <button id="iiiamdess-flyer-close" type="button" aria-label="Close flyer" title="Close flyer">×</button>
+</aside>
+<div id="iiiamdess-link-menu" role="dialog" aria-modal="true" aria-labelledby="iiiamdess-menu-title" aria-hidden="true">
+  <div class="iiiamdess-menu-panel">
+    <button id="iiiamdess-menu-close" type="button" aria-label="Close streaming links">×</button>
+    <h2 id="iiiamdess-menu-title">IIIAMDESS</h2>
+    <p>Choose a platform to watch the stream.</p>
+    <div class="iiiamdess-menu-links">
+      <a href="https://kick.com/iiammdess/" target="_blank" rel="noopener noreferrer">IIIAMDESS's Kick® ↗</a>
+      <a href="https://www.twitch.tv/iiiiamdess/" target="_blank" rel="noopener noreferrer">IIIAMDESS's Twitch® ↗</a>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const flyer = document.getElementById('iiiamdess-flyer-launcher');
+  const dismiss = document.getElementById('iiiamdess-flyer-close');
+  const menu = document.getElementById('iiiamdess-link-menu');
+  const menuClose = document.getElementById('iiiamdess-menu-close');
+  if (!flyer || !dismiss || !menu || !menuClose) return;
+  let dismissed = false;
+  let shown = false;
+  const revealAfterScroll = () => {
+    if (!dismissed && !shown && window.scrollY > 24) {
+      flyer.classList.add('is-visible');
+      shown = true;
+    }
+  };
+  const openMenu = () => {
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden','false');
+    menuClose.focus();
+  };
+  const closeMenu = () => {
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden','true');
+    flyer.focus();
+  };
+  flyer.addEventListener('click', (event) => {
+    if (event.target === dismiss) return;
+    openMenu();
+  });
+  flyer.addEventListener('keydown', (event) => {
+    if (event.target === flyer && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      openMenu();
+    }
+  });
+  dismiss.addEventListener('click', (event) => {
+    event.stopPropagation();
+    dismissed = true;
+    flyer.classList.remove('is-visible');
+  });
+  menuClose.addEventListener('click', closeMenu);
+  menu.addEventListener('click', (event) => {
+    if (event.target === menu) closeMenu();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
+  });
+  window.addEventListener('scroll', revealAfterScroll, {passive:true});
+  revealAfterScroll();
+})();
+</script>
+
 </body>
 </html>
