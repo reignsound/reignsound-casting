@@ -496,16 +496,16 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
  .mobile-nav-link:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(233,226,235,.48);transform:scaleX(0);transform-origin:left;transition:transform .18s ease}
  .mobile-nav-link:hover:after,.mobile-nav-link:focus-visible:after,.mobile-nav-link.active:after{transform:scaleX(1)}
  .mobile-nav-link.active:after{height:2px;background:#ff43c6}
- .mobile-casting-brand-row{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding-top:2px}
- .mobile-casting-brand-link{display:flex;align-items:center;justify-content:center;width:min(190px,52vw);min-width:0;line-height:0}
- .mobile-casting-brand-link img{display:block;width:100%;height:auto;max-height:27px;object-fit:contain;object-position:center}
- .mobile-casting-details{min-height:32px!important;padding:0 13px!important;font-size:9px!important}
+ .mobile-casting-brand-row{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:2px 0 0}
+ .mobile-casting-brand-link{display:flex;flex:1 1 auto;align-items:center;justify-content:flex-start;width:auto;max-width:calc(100% - 82px);min-width:0;line-height:0}
+ .mobile-casting-brand-link img{display:block;width:100%;height:auto;max-height:23px;object-fit:contain;object-position:left center}
+ .mobile-casting-details{flex:0 0 auto;min-height:32px!important;padding:0 13px!important;font-size:9px!important}
 }
 @media(max-width:360px){
  .mobile-site-header{padding-left:8px;padding-right:8px}
  .mobile-casting-nav{gap:8px}
  .mobile-nav-link{font-size:8px}
- .mobile-casting-brand-link{width:min(170px,51vw)}
+ .mobile-casting-brand-link{max-width:calc(100% - 74px)}
  .mobile-casting-details{padding:0 10px!important;font-size:8px!important}
 }
 @media(prefers-reduced-motion:reduce){.mobile-nav-link:after{transition:none}}
@@ -538,7 +538,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
   </nav>
   <div class="mobile-casting-brand-row">
    <a class="mobile-casting-brand-link" href="https://reignsound.com/" aria-label="Reignsound Casting™ home">
-    <img src="/assets/reignsound-casting/reignsound-casting-logo.svg" alt="Reignsound Casting™">
+    <img src="/assets/reignsound-casting/rcn-logo.svg" alt="Reignsound Casting Network™">
    </a>
    <a class="navcta mobile-casting-details" href="#casting">DETAILS</a>
   </div>
