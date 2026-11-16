@@ -602,6 +602,72 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 @media(max-width:560px){#iiiamdess-flyer-launcher{right:14px;bottom:14px;width:min(205px,calc(100vw - 34px));padding:5px}#iiiamdess-flyer-launcher img{max-height:42vh}.iiiamdess-menu-panel{padding:26px 18px 20px}}
 @media(prefers-reduced-motion:reduce){#iiiamdess-flyer-launcher,#iiiamdess-link-menu{transition:none}}
 
+
+/* Permanent mobile header fix: give the complete wordmark its own row so it cannot be flex-shrunk or pushed off-canvas. */
+@media(max-width:560px){
+ .topbar{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:center!important;
+  justify-content:initial!important;
+  gap:8px!important;
+  width:calc(100% - 32px)!important;
+  min-height:78px!important;
+  overflow:visible!important;
+ }
+ .brand-placeholder{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;
+  justify-items:start!important;
+  align-content:center!important;
+  align-items:center!important;
+  width:100%!important;
+  min-width:0!important;
+  gap:4px!important;
+  overflow:visible!important;
+  white-space:normal!important;
+ }
+ .header-home-link{
+  display:flex!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  flex:none!important;
+  overflow:visible!important;
+ }
+ .header-logo{
+  display:block!important;
+  width:clamp(135px,46vw,170px)!important;
+  max-width:100%!important;
+  min-width:0!important;
+  height:auto!important;
+  max-height:30px!important;
+  flex:none!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+ }
+ .header-application{
+  display:inline-flex!important;
+  justify-self:start!important;
+  width:max-content!important;
+  max-width:100%!important;
+  margin:0!important;
+  white-space:nowrap!important;
+  font-size:8px!important;
+  letter-spacing:.1em!important;
+  line-height:1.3!important;
+ }
+ .nav-actions{
+  display:flex!important;
+  justify-self:end!important;
+  align-items:center!important;
+  min-width:0!important;
+  flex:none!important;
+ }
+ .navcta{white-space:nowrap!important}
+}
+
 </style>
 </head>
 <body>
