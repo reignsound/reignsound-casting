@@ -224,51 +224,50 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 @media(max-width:560px){.header-logo{width:clamp(135px,39vw,185px);max-height:28px}.header-application{font-size:8px!important;letter-spacing:.1em!important}}
 
 
-/* Mobile header layout: keep the brand and navigation inside the viewport */
+/* Mobile header layout: reserve a clear, independent area for the brand mark. */
 @media(max-width:560px){
  .topbar{
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
   align-items:center;
-  gap:8px;
+  gap:10px;
   width:calc(100% - 32px);
  }
  .brand-placeholder{
   display:flex;
   align-items:center;
-  flex:initial;
   width:100%;
   min-width:0;
-  gap:6px;
+  gap:0;
  }
  .header-home-link{
   display:flex;
-  flex:0 1 clamp(100px,34vw,128px);
-  width:clamp(100px,34vw,128px);
+  flex:0 1 100%;
+  width:100%;
   min-width:0;
   overflow:visible;
+  position:relative;
+  z-index:3;
  }
  .header-logo{
   display:block;
-  width:100%;
+  width:clamp(150px,43vw,185px);
   max-width:100%;
   min-width:0;
   height:auto;
-  max-height:28px;
-  flex:1 1 auto;
+  max-height:34px;
+  flex:0 1 auto;
   object-fit:contain;
   object-position:left center;
  }
- .header-application{
-  flex:0 0 auto;
-  font-size:8px!important;
-  letter-spacing:.08em!important;
- }
+ .header-application{display:none!important}
  .nav-actions{
   display:flex;
   flex:0 0 auto;
   min-width:0;
   gap:0;
+  position:relative;
+  z-index:2;
  }
  .navcta{
   min-height:40px;
