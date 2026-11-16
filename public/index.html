@@ -358,7 +358,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 .iii-amdess-platform-link:hover{border-color:#ff43c6;background:#ff43c6;color:#090609}
 .iii-amdess-menu-close{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:#171117;color:#fff;font-size:21px;line-height:1;cursor:pointer}
 @media(max-width:560px){
- .iii-amdess-flyer-widget{right:12px;bottom:14px;width:clamp(116px,35vw,154px)}
+ .iii-amdess-flyer-widget{left:12px;right:auto;bottom:14px;width:clamp(116px,35vw,154px)}
  .iii-amdess-menu{padding:14px}
  .iii-amdess-menu-panel{grid-template-columns:1fr;gap:12px;width:min(340px,100%);max-height:min(90dvh,760px);overflow:auto;padding:16px}
  .iii-amdess-menu-art{width:auto;height:clamp(150px,34vh,240px);max-width:100%;margin:0 auto}
@@ -481,5 +481,64 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 
 
 <!-- IIIAMDESS streaming flyer is withdrawn from the live page. -->
+
+<div class="iii-amdess-flyer-widget" id="iii-amdess-flyer-widget" aria-label="IIIAMDESS streaming links">
+  <button class="iii-amdess-flyer-trigger" id="iii-amdess-flyer-trigger" type="button" aria-haspopup="dialog" aria-controls="iii-amdess-menu" aria-label="Open IIIAMDESS streaming links">
+    <img src="/assets/iiiamdess/iiiamdess-live-flyer.webp" alt="IIIAMDESS DESSATHON — real behind the scenes of DESS life" loading="lazy">
+  </button>
+  <button class="iii-amdess-flyer-close" id="iii-amdess-flyer-close" type="button" aria-label="Dismiss flyer">×</button>
+</div>
+<div class="iii-amdess-menu" id="iii-amdess-menu" role="dialog" aria-modal="true" aria-labelledby="iii-amdess-menu-title" hidden>
+  <div class="iii-amdess-menu-panel">
+    <img class="iii-amdess-menu-art" src="/assets/iiiamdess/iiiamdess-live-flyer.webp" alt="IIIAMDESS DESSATHON flyer">
+    <div class="iii-amdess-menu-content">
+      <p class="iii-amdess-menu-kicker">Watch IIIAMDESS</p>
+      <h2 class="iii-amdess-menu-title" id="iii-amdess-menu-title">Choose a streaming platform</h2>
+      <div class="iii-amdess-platform-links">
+        <a class="iii-amdess-platform-link" href="https://kick.com/iiammdess/" target="_blank" rel="noopener noreferrer">IIIAMDESS's Kick®</a>
+        <a class="iii-amdess-platform-link" href="https://www.twitch.tv/iiiiamdess/" target="_blank" rel="noopener noreferrer">IIIAMDESS's Twitch®</a>
+      </div>
+    </div>
+    <button class="iii-amdess-menu-close" id="iii-amdess-menu-close" type="button" aria-label="Close streaming menu">×</button>
+  </div>
+</div>
+<script>
+(() => {
+  const flyer = document.getElementById('iii-amdess-flyer-widget');
+  const trigger = document.getElementById('iii-amdess-flyer-trigger');
+  const dismiss = document.getElementById('iii-amdess-flyer-close');
+  const menu = document.getElementById('iii-amdess-menu');
+  const close = document.getElementById('iii-amdess-menu-close');
+  if (!flyer || !trigger || !dismiss || !menu || !close) return;
+  const dismissedKey = 'iii-amdess-flyer-dismissed';
+  const show = () => {
+    if (sessionStorage.getItem(dismissedKey) === '1') return;
+    if (window.scrollY > 48) flyer.classList.add('is-visible');
+  };
+  const openMenu = () => {
+    menu.hidden = false;
+    close.focus();
+  };
+  const closeMenu = () => {
+    menu.hidden = true;
+    trigger.focus();
+  };
+  window.addEventListener('scroll', show, { passive: true });
+  show();
+  trigger.addEventListener('click', openMenu);
+  dismiss.addEventListener('click', () => {
+    flyer.classList.remove('is-visible');
+    sessionStorage.setItem(dismissedKey, '1');
+  });
+  close.addEventListener('click', closeMenu);
+  menu.addEventListener('click', event => {
+    if (event.target === menu) closeMenu();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !menu.hidden) closeMenu();
+  });
+})();
+</script>
+
 </body>
 </html>
