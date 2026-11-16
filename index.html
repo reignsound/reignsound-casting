@@ -781,73 +781,8 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 </footer>
 </div>
 
-<!-- IIIAMDESS live-streaming flyer -->
-<aside hidden id="iiiamdess-flyer-launcher" aria-label="IIIAMDESS live streaming flyer" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="iiiamdess-link-menu">
-  <img src="/assets/iiiamdess/iiiamdess-live-flyer.webp" alt="IIIAMDESS presents DESSATHON — live on Twitch and Kick. Collaborations will be announced as well." width="1136" height="1408" loading="eager" decoding="async">
-  <button id="iiiamdess-flyer-close" type="button" aria-label="Close flyer" title="Close flyer">×</button>
-</aside>
-<div hidden id="iiiamdess-link-menu" role="dialog" aria-modal="true" aria-labelledby="iiiamdess-menu-title" aria-hidden="true">
-  <div class="iiiamdess-menu-panel">
-    <button id="iiiamdess-menu-close" type="button" aria-label="Close streaming links">×</button>
-    <h2 id="iiiamdess-menu-title">IIIAMDESS</h2>
-    <p>Choose a platform to watch the stream.</p>
-    <div class="iiiamdess-menu-links">
-      <a href="https://kick.com/iiammdess/" target="_blank" rel="noopener noreferrer">IIIAMDESS's Kick® ↗</a>
-      <a href="https://www.twitch.tv/iiiiamdess/" target="_blank" rel="noopener noreferrer">IIIAMDESS's Twitch® ↗</a>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  const flyer = document.getElementById('iiiamdess-flyer-launcher');
-  const dismiss = document.getElementById('iiiamdess-flyer-close');
-  const menu = document.getElementById('iiiamdess-link-menu');
-  const menuClose = document.getElementById('iiiamdess-menu-close');
-  if (!flyer || !dismiss || !menu || !menuClose) return;
-  let dismissed = false;
-  let shown = false;
-  const revealAfterScroll = () => {
-    if (!dismissed && !shown && window.scrollY > 24) {
-      flyer.classList.add('is-visible');
-      shown = true;
-    }
-  };
-  const openMenu = () => {
-    menu.classList.add('is-open');
-    menu.setAttribute('aria-hidden','false');
-    menuClose.focus();
-  };
-  const closeMenu = () => {
-    menu.classList.remove('is-open');
-    menu.setAttribute('aria-hidden','true');
-    flyer.focus();
-  };
-  flyer.addEventListener('click', (event) => {
-    if (event.target === dismiss) return;
-    openMenu();
-  });
-  flyer.addEventListener('keydown', (event) => {
-    if (event.target === flyer && (event.key === 'Enter' || event.key === ' ')) {
-      event.preventDefault();
-      openMenu();
-    }
-  });
-  dismiss.addEventListener('click', (event) => {
-    event.stopPropagation();
-    dismissed = true;
-    flyer.classList.remove('is-visible');
-  });
-  menuClose.addEventListener('click', closeMenu);
-  menu.addEventListener('click', (event) => {
-    if (event.target === menu) closeMenu();
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
-  });
-  window.addEventListener('scroll', revealAfterScroll, {passive:true});
-  revealAfterScroll();
-})();
-</script>
+<!-- IIIAMDESS streaming flyer temporarily withdrawn. Artwork remains in the repository for future reactivation. -->
+
 
 </body>
 </html>
