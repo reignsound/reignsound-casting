@@ -672,6 +672,16 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
  .navcta{white-space:nowrap!important}
 }
 
+
+/* Center the third experience card beneath both cards on mobile. */
+@media(max-width:560px){
+ #casting .grid>.tile:nth-child(3){
+  grid-column:1 / -1;
+  justify-self:center;
+  width:min(100%,420px);
+  margin-inline:0;
+ }
+}
 </style>
 </head>
 <body>
