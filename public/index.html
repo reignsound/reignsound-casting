@@ -1107,9 +1107,10 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
    if(!response.ok) throw new Error('Status unavailable');
    const data=await response.json();
    const live=Boolean(data.kick?.live||data.twitch?.live);
+   const available=Boolean(data.available);
    status.classList.toggle('is-live',live);
-   status.setAttribute('aria-label',live?'IIIAMDESS is live':'IIIAMDESS is offline');
-   label.textContent=live?'LIVE':'OFFLINE';
+   status.setAttribute('aria-label',live?'IIIAMDESS is live':available?'IIIAMDESS is offline':'Streaming status unavailable');
+   label.textContent=live?'LIVE':available?'OFFLINE':'STATUS UNAVAILABLE';
   }catch(error){
    status.classList.remove('is-live');
    status.setAttribute('aria-label','Streaming status unavailable');
