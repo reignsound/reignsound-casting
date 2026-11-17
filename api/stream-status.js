@@ -82,17 +82,28 @@ module.exports = async function handler(req, res) {
   const twitchOk = twitch.status === "fulfilled";
   const kickLive = kickOk && kick.value;
   const twitchLive = twitchOk && twitch.value;
-  const available = kickOk && twitchOk;
+  const kickConfigured = Boolean(process.env.KICK_CLIENT_ID && process.env.KICK_CLIENT_SECRET);
+  const twitchConfigured = Boolean(process.env.TWITCH_CLIENT_ID && process.env.TWITCH_CLIENT_SECRET);
+
+  // The checker remains operational when at least one configured platform responds.
+  // An unconfigured or failing platform does not invalidate a successful platform check.
+  const available = kickOk || twitchOk;
 
   const value = {
     available,
     live: kickLive || twitchLive,
-    kick: { available: kickOk, live: kickOk ? kickLive : null },
-    twitch: { available: twitchOk, live: twitchOk ? twitchLive : null },
+    kick: {
+      configured: kickConfigured,
+      available: kickOk,
+      live: kickOk ? kickLive : null
+    },
+    twitch: {
+      configured: twitchConfigured,
+      available: twitchOk,
+      live: twitchOk ? twitchLive : null
+    },
     checkedAt: new Date().toISOString()
   };
-  // If either platform reports live, LIVE is definitive even if the other is unavailable.
-  if (kickLive || twitchLive) value.available = true;
   statusCache = { value, expiresAt: Date.now() + 30000 };
   return res.status(200).json(value);
 };
