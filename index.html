@@ -1042,7 +1042,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 </dl>
 </section>
 </div>
-<div class="iii-amdess-mobile-footer-flyer" id="iii-amdess-mobile-flyer">
+<div class="iii-amdess-mobile-footer-flyer" id="iii-amdess-mobile-flyer" tabindex="-1" style="scroll-margin-top:16px">
  <div class="iii-amdess-mobile-flyer-heading">REIGNSOUND ADS™</div>
  <button class="iii-amdess-flyer-trigger" id="iii-amdess-mobile-flyer-trigger" type="button" aria-haspopup="dialog" aria-controls="iii-amdess-menu" aria-label="Open IIIAMDESS streaming links">
   <img src="/assets/iiiamdess/iiiamdess-live-flyer.webp" alt="IIIAMDESS DESSATHON — real behind the scenes of DESS life" loading="lazy">
@@ -1083,6 +1083,8 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
  const dismiss=document.getElementById('iii-amdess-flyer-close');
  const menu=document.getElementById('iii-amdess-menu');
  const close=document.getElementById('iii-amdess-menu-close');
+ const marqueeLink=document.querySelector('.rs-mobile-marquee-link');
+ if(marqueeLink){marqueeLink.addEventListener('click',event=>{const target=document.getElementById('iii-amdess-mobile-flyer');if(target){event.preventDefault();target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});target.focus({preventScroll:true});}});}
  const status=document.getElementById('rs-mobile-live-status');
  const label=document.getElementById('rs-mobile-live-label');
  if(!flyer||!desktopTrigger||!dismiss||!menu||!close) return;
