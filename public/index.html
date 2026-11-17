@@ -1101,7 +1101,7 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!menu.hidden)closeMenu();});
  // Status is provided by a same-origin endpoint once API credentials are configured.
  const refreshStatus=async()=>{
-  if(!status||!label) return;
+  if(!status||!label||!window.matchMedia('(max-width: 800px)').matches) return;
   try{
    const response=await fetch('/api/stream-status',{headers:{'Accept':'application/json'},cache:'no-store'});
    if(!response.ok) throw new Error('Status unavailable');
