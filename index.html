@@ -892,11 +892,11 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 .rs-mobile-marquee-content span{flex-shrink:0}
 @keyframes rs-mobile-marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .iii-amdess-mobile-footer-flyer{display:none}
-.iii-amdess-mobile-flyer-heading{margin:0 0 12px;color:#b8b3ad;text-align:center;font:500 9px/1.4 "IBM Plex Mono",monospace;letter-spacing:.14em}
+.iii-amdess-mobile-flyer-heading{display:block;width:100%;margin:0;color:#b8b3ad;text-align:center;font:500 9px/1.4 "IBM Plex Mono",monospace;letter-spacing:.14em}
 @media(max-width:800px){
  .rs-mobile-marquee-link{display:block}
  .iii-amdess-flyer-widget{display:none!important}
- .iii-amdess-mobile-footer-flyer{display:flex;justify-content:center;align-items:center;width:100%;margin:24px auto 0;padding:20px 16px 26px;border-top:1px solid rgba(255,255,255,.12)}
+ .iii-amdess-mobile-footer-flyer{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;width:100%;margin:0 auto;padding:20px 16px 20px;border-top:1px solid rgba(255,255,255,.12);text-align:center}
  .iii-amdess-mobile-footer-flyer .iii-amdess-flyer-trigger{width:min(180px,58vw);max-width:100%}
 }
 @media(prefers-reduced-motion:reduce){.rs-mobile-marquee-track{animation:none}}
