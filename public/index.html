@@ -901,6 +901,31 @@ body{font-family:"IBM Plex Sans",Arial,sans-serif;-webkit-font-smoothing:antiali
 }
 @media(prefers-reduced-motion:reduce){.rs-mobile-marquee-track{animation:none}}
 
+
+/* Reignsound desktop footer standard — center the complete visible composition against the viewport. */
+@media(min-width:801px){
+ .footer>.footer-inner{
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  width:max-content;
+  max-width:calc(100% - 48px);
+  margin-left:0;
+  margin-right:0;
+ }
+}
+/* Keep the independently approved mobile footer layout completely untouched. */
+@media(max-width:800px){
+ .footer>.footer-inner{
+  position:static;
+  left:auto;
+  transform:none;
+  width:100%;
+  max-width:none;
+  margin-inline:0;
+ }
+}
+
 </style>
 </head>
 <body>
